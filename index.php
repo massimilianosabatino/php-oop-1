@@ -11,5 +11,6 @@
     <main>
         <?php include_once __DIR__. '/templates/movie.php'; ?>
     </main>
+    <?php include_once __DIR__. '/templates/footer.php'; ?>
 </body>
 </html>
