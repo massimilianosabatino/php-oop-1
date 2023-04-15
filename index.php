@@ -5,9 +5,8 @@ class Movie {
   public $description;
   public $year;
   public $genres;
-  public $checkYearVisibility = false;
 
-  public function __construct(string $title, string $description, int $year, array $genres = [])
+  public function __construct(string $title, string $description, int $year, ...$genres)
   {
     $this->title = $title;
     $this->description = $description;
@@ -19,8 +18,9 @@ class Movie {
   public function checkYear() {
     if($this->year < 2000) {
       print 'inizia ad essere d\'altri tempi';
-      $this->checkYearVisibility = true;
-    };
+    } else{
+      print 'guardalo e lascia una recensione';
+    }
   }
 
   //Controlla se l'array dei generi è pieno
@@ -34,13 +34,13 @@ class Movie {
   //Stampa i generi
   private function printGenres(){
     foreach($this->genres as $genre){
-      print $genre .' ';
+      echo $genre . ' ';
     }
   }
 }
 
 //crea instanze per film da classe Movie
-$superman = new Movie('Superman', 'Un orfano proveniente da un altro pianeta arriva sulla Terra, dove crescerà e diventerà un super-eroe', 1978, ['Azione','Avventura','Fantascienza']);
+$superman = new Movie('Superman', 'Un orfano proveniente da un altro pianeta arriva sulla Terra, dove crescerà e diventerà un super-eroe', 1978, 'Azione','Avventura','Fantascienza');
 
 echo 'Oggetto Film';
 print '<br>';
@@ -65,17 +65,15 @@ echo $superman->description;
 
 print '<br>'.'<br>';
 
-if($mario->checkYearVisibility){
 echo 'Metodi';
 echo '<br>';
 print $superman->checkYear();
-}
 
 echo '<br>';
 echo '<hr>';
 echo '<br>';
 
-$mario = new Movie('Super Mario Bros - Il film', 'Un idraulico di nome Mario viaggia attraverso un labirinto sotterraneo con suo fratello Luigi, cercando di salvare una principessa catturata.', 2023, ['Animazione', 'Avventura', 'Commedia', 'Per famiglie', 'Fantastico']);
+$mario = new Movie('Super Mario Bros - Il film', 'Un idraulico di nome Mario viaggia attraverso un labirinto sotterraneo con suo fratello Luigi, cercando di salvare una principessa catturata.', 2023, 'Animazione', 'Avventura', 'Commedia', 'Per famiglie', 'Fantastico');
 
 echo 'Oggetto Film';
 print '<br>';
@@ -100,8 +98,6 @@ echo $mario->description;
 
 print '<br>'.'<br>';
 
-if($mario->checkYearVisibility){
-  echo 'Metodi';
-  echo '<br>';
-  print $mario->checkYear();
-}
+echo 'Metodi';
+echo '<br>';
+print $mario->checkYear();
