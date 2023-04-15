@@ -9,11 +9,9 @@ require_once __DIR__. '/../db.php';
         <p><?php echo $movie->description ?></p>
         <div>
             <h3>Genere</h3>
-            <ul>
-                <?php foreach ($movie->genres as $genre): ?>
-                <li><?php echo $genre ?></li>
-                <?php endforeach; ?>
-            </ul>
+            <div>
+                <?php $movie->hasGenres() ?>
+            </div>
         </div>
         <div>Frase di controllo</div>
     </li>
