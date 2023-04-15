@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__. '/../db.php';
+require_once __DIR__. '/../Model/Utils.php';
 ?>
 <ul>
     <?php foreach ($all_movie as $movie): ?>
@@ -13,7 +14,7 @@ require_once __DIR__. '/../db.php';
                 <?php $movie->hasGenres() ?>
             </div>
         </div>
-        <div><?php echo $movie->checkYear() ?></div>
+        <div><?php echo Utils::checkYear($movie->year) ?></div>
     </li>
     <?php endforeach; ?>
 </ul>

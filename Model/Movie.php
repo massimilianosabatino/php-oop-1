@@ -31,18 +31,6 @@ class Movie {
     $this->genres = $genres;
   }
 
-  //Controlla se l'anno e restituisce una stringa
-  public function checkYear()
-  {
-    if ($this->year < 2000)
-    {
-      print 'inizia ad essere d\'altri tempi';
-    } else
-    {
-      print 'guardalo e lascia una recensione';
-    }
-  }
-
   //Controlla se l'array dei generi è pieno
   public function hasGenres()
   {
