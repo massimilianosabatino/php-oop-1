@@ -13,7 +13,7 @@ require_once __DIR__. '/../db.php';
                 <?php $movie->hasGenres() ?>
             </div>
         </div>
-        <div>Frase di controllo</div>
+        <div><?php echo $movie->checkYear() ?></div>
     </li>
     <?php endforeach; ?>
 </ul>
