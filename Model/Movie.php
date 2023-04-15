@@ -1,13 +1,9 @@
 <?php 
-/**
- * 
- */
 class Movie {
   /**
    * Classe per creare un oggetto movie. Passando i parametri il costruttore crea un oggetto film.
    * Sono presenti due metodi:
    * @method mixes printGenres() stampa l'elenco dei generi contenuti nell oggetto
-   * @method mixed checkYear() controlla l'anno e restituisce un testo
    */
   public $title;
   public $description;
