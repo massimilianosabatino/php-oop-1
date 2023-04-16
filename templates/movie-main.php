@@ -18,3 +18,7 @@ require_once __DIR__. '/../Model/Utils.php';
     </li>
     <?php endforeach; ?>
 </ul>
+<div>
+    <h3>Film totali</h3>
+    <div><?php echo Movie::getTotalMovie(); ?></div>
+</div>

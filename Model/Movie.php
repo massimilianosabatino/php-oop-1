@@ -3,12 +3,15 @@ class Movie {
   /**
    * Classe per creare un oggetto movie. Passando i parametri il costruttore crea un oggetto film.
    * Sono presenti due metodi:
-   * @method mixes printGenres() stampa l'elenco dei generi contenuti nell oggetto
+   * @method mixed printGenres() stampa l'elenco dei generi contenuti nell oggetto
+   * @method mixed getTotalMovie() restituisce quanti oggetti sono stati creati dalla classe movie
    */
   public $title;
   public $description;
   public $year;
   public $genres;
+
+  private static $movie_counter = 0;
 
 /**
  * Costruttore per la classe Movie
@@ -25,6 +28,8 @@ class Movie {
     $this->description = $description;
     $this->year = $year;
     $this->genres = $genres;
+
+    self::$movie_counter++;
   }
 
   //Controlla se l'array dei generi è pieno
@@ -44,5 +49,10 @@ class Movie {
     {
       echo $genre . ' ';
     }
+  }
+
+  public static function getTotalMovie()
+  {
+    return self::$movie_counter;
   }
 }
