@@ -10,9 +10,9 @@ class Media {
      */
     public function __construct(string $type)
     {
-        if (is_null($type))
+        if ($type === '')
         {
-            $this->media_type = '';
+            $this->media_type = null;
         }else 
         {
             $this->media_type = $type;
