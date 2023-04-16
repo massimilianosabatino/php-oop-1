@@ -10,6 +10,7 @@ class Movie {
   public $description;
   public $year;
   public $genres;
+  public $media_type;
 
   private static $movie_counter = 0;
 
@@ -22,12 +23,13 @@ class Movie {
  * @param string ...$genres
  * @return  mixed Restituisce un oggetto film
  */
-  public function __construct (string $title, string $description, int $year, ...$genres)
+  public function __construct (string $title, string $description, int $year, Media $type, ...$genres)
   {
     $this->title = $title;
     $this->description = $description;
     $this->year = $year;
     $this->genres = $genres;
+    $this->media_type = $type; 
 
     self::$movie_counter++;
   }

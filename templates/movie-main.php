@@ -21,4 +21,6 @@ require_once __DIR__. '/../Model/Utils.php';
 <div>
     <h3>Film totali</h3>
     <div><?php echo Movie::getTotalMovie(); ?></div>
+    <?php var_dump($superman); ?>
+    <?php var_dump($mario); ?>
 </div>
